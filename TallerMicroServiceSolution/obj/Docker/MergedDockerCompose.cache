@@ -1,0 +1,72 @@
+name: dockercompose15846898708010638553
+services:
+  customerdb:
+    container_name: customer-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: 12345678Password*
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "8001"
+      protocol: tcp
+  customerwebapi:
+    build:
+      context: C:\Users\cuerv\source\repos\TallerMicroServiceSolution
+      dockerfile: CustomerWebApi/Dockerfile
+    container_name: customer-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DB_HOST: customerdb
+      DB_NAME: customer
+      DB_SA_PASSWORD: 12345678Password*
+    image: customerwebapi
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8002"
+      protocol: tcp
+  productdb:
+    container_name: product-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678Password*
+    image: mysql:8.0.29-oracle
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 3306
+      published: "8003"
+      protocol: tcp
+  productwebapi:
+    build:
+      context: C:\Users\cuerv\source\repos\TallerMicroServiceSolution
+      dockerfile: ProductWebApi/Dockerfile
+    container_name: product-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DB_HOST: productdb
+      DB_NAME: product
+      DB_ROOT_PASSWORD: 12345678Password*
+    image: productwebapi
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8004"
+      protocol: tcp
+networks:
+  backend:
+    name: dockercompose15846898708010638553_backend
