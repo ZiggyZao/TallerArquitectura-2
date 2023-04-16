@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "420b2dcc-dd3e-428f-8196-3270977af851",
+		"name": "TallerArquiMicro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21190055"
+	},
+	"item": [
+		{
+			"name": "CustomerWebAPi",
+			"item": [
+				{
+					"name": "Get Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerName\": \"Peter\",\r\n    \"MobileNumber\": \"3205418966\",\r\n    \"Email\": \"Peter@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerID\": 2,\r\n    \"CustomerName\": \"Petersa\",\r\n    \"MobileNumber\": \"3205418966\",\r\n    \"Email\": \"Peteras@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5229/api/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5229",
+							"path": [
+								"api",
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5229/api/Customer/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5229",
+							"path": [
+								"api",
+								"Customer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductWebAPi",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:60437/api/Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "60437",
+							"path": [
+								"api",
+								"Product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProducts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductName\": \"Banana\",\r\n    \"ProductCode\": \"p99\",\r\n    \"ProductPrice\": 100.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"Product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerID\": 2,\r\n    \"CustomerName\": \"Petersa\",\r\n    \"MobileNumber\": \"3205418966\",\r\n    \"Email\": \"Peteras@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5229/api/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5229",
+							"path": [
+								"api",
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:60437/api/Product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "60437",
+							"path": [
+								"api",
+								"Product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderWebAPi",
+			"item": [
+				{
+					"name": "GetOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8006/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OrderId\": \"\",\r\n    \"CustomerId\": 11,\r\n    \"OrderedOn\":\"2023-05-01T01:00:00Z\",\r\n    \"OrderDetails\": [\r\n        {\r\n            \"ProductId\": 2,\r\n            \"Quantity\": 1,\r\n            \"Price\": 100.0\r\n        },\r\n                {\r\n            \"ProductId\": 3,\r\n            \"Quantity\": 1,\r\n            \"Price\": 100.0\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOrders",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerID\": 2,\r\n    \"CustomerName\": \"Petersa\",\r\n    \"MobileNumber\": \"3205418966\",\r\n    \"Email\": \"Peteras@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8006/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteOrders",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8006/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
